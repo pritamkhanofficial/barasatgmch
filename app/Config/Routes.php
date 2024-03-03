@@ -49,6 +49,23 @@ $routes->group('back-panel', static function ($routes) {
         $routes->match(['get', 'post'],'hospital-head/(:segment)', 'BackPanelController::hospitalHead/$1');
         $routes->match(['get', 'post'],'hospital-head/(:segment)/(:segment)', 'BackPanelController::hospitalHead/$1/$2');
 
+
+        $routes->match(['get', 'post'],'department/', 'BackPanelController::department');
+        $routes->match(['get', 'post'],'department/(:segment)', 'BackPanelController::department/$1');
+        $routes->match(['get', 'post'],'department/(:segment)/(:segment)', 'BackPanelController::department/$1/$2');
+
+
+
+        $routes->match(['get', 'post'],'staff/', 'BackPanelController::staff');
+        $routes->match(['get', 'post'],'staff/(:segment)', 'BackPanelController::staff/$1');
+        $routes->match(['get', 'post'],'staff/(:segment)/(:segment)', 'BackPanelController::staff/$1/$2');
+
+
+
+        $routes->match(['get', 'post'],'designation/', 'BackPanelController::designation');
+        $routes->match(['get', 'post'],'designation/(:segment)', 'BackPanelController::designation/$1');
+        $routes->match(['get', 'post'],'designation/(:segment)/(:segment)', 'BackPanelController::designation/$1/$2');
+
        
     });
 });

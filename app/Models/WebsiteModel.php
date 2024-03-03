@@ -63,14 +63,24 @@ class WebsiteModel extends Model
     public function getDocument($type){
         $where = ['doc_type'=>$type,'is_active'=>1,'deleted_at'=>NULL];
 
-        if($type != 'ARS'){
-            $where['end_date <='] = \getCurrentDate();
+        $builder = $this->db->table('documents');
+        if($type != 'IC'){
+            $builder->groupStart();
+                $builder->where(['end_date >=' => \getCurrentDate()]);
+                $builder->orWhere(['end_date'=> NULL]);
+            $builder->groupEnd();
         }
-        return $this->db->table('documents')->where($where)->get()->getResult();
+
+        $builder->where($where);
+        return $builder->get()->getResult();
 
     }
     public function getGallery(){
         return $this->db->table('gallery')->where(['show_on_home'=>1,'is_active'=>1,'deleted_at'=>NULL])->get()->getResult();
+
+    }
+    public function getDepartment(){
+        return $this->db->table('department')->where(['is_active'=>1,'deleted_at'=>NULL])->get()->getResult();
 
     }
     public function getHospitalHead(){

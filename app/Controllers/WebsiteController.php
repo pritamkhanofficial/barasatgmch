@@ -13,7 +13,7 @@ class WebsiteController extends BaseController
     }
     public function home()
     {
-        $sliders = $this->websiteModel->getSlider();
+        /* $sliders = $this->websiteModel->getSlider();
         $news = $this->websiteModel->getDocument('NE');
         $tender = $this->websiteModel->getDocument('TENDER');
         $notice = $this->websiteModel->getDocument('NOTICE');
@@ -28,6 +28,21 @@ class WebsiteController extends BaseController
             'gallery'=>$gallery,
             'hospital_head'=>$hospital_head,
             'anti_ragging_section'=>$anti_ragging_section,
+        ]); */
+        $sliders = $this->websiteModel->getSlider();
+        $tender = $this->websiteModel->getDocument('TQ');
+        $notice = $this->websiteModel->getDocument('GN');
+        $department = $this->websiteModel->getDepartment();
+        $gallery = $this->websiteModel->getGallery();
+        return view('website/home',[
+            'sliders'=>$sliders,
+            //'news'=>$news,
+            'tender'=>$tender,
+            'notice'=>$notice,
+            'department'=>$department,
+            'gallery'=>$gallery,
+            //'hospital_head'=>$hospital_head,
+            //'anti_ragging_section'=>$anti_ragging_section,
         ]);
     }
 }
