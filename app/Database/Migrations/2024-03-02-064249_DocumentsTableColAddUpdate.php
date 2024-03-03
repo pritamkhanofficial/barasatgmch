@@ -8,8 +8,6 @@ class DocumentsTableColAddUpdate extends Migration
 {
     public function up()
     {
-        $this->forge->dropColumn('documents', 'deleted_by');
-
         $fields = [
             'end_date' => [
                 'type'           => 'DATETIME',
@@ -30,16 +28,6 @@ class DocumentsTableColAddUpdate extends Migration
 
     public function down()
     {
-        $fields = [
-            'deleted_by' => [
-                'type'           => 'BIGINT',
-                'constraint'     => 20,
-                'unsigned'       => true,
-                'null'           => true
-            ],
-        ];
-        $this->forge->addColumn('documents', $fields);
-
         $this->forge->dropColumn('documents', 'end_date');
         $this->forge->dropColumn('documents', 'description');
 

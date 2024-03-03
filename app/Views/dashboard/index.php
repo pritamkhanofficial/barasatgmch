@@ -28,7 +28,7 @@
                     <!-- end page breadcrumb -->
                     <div class="row">
                         <div class="col-xl-12">
-                            <div class="row">
+                            <!-- <div class="row">
                                 <div class="col-md-4">
                                     <div class="card mini-stats-wid">
                                         <div class="card-body">
@@ -89,7 +89,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- end row -->
 
                         </div>

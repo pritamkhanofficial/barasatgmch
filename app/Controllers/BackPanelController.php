@@ -54,11 +54,9 @@ class BackPanelController extends BaseController
         $crud->fields(['title','file','description', 'doc_type', 'end_date', 'is_active','created_by','updated_at','updated_by']);
         $crud->setTexteditor(['description']);
         $crud->fieldType('doc_type', 'dropdown', [
-            'NOTICE' => 'Notice',
-            'TENDER' => 'Tender',
-            'NE' => 'News / Events',
-            'ARS' => 'Anti Ragging Section',
-            'MENU' => 'Nav Menu'
+            'GN' => 'General Notices',
+            'TQ' => 'Tender / Quotation',
+            'IC' => 'Institute Committees'
         ]);
         $this->fileHandle($crud, 'file','document');
 

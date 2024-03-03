@@ -705,12 +705,18 @@ function getDateFormat()
         if(!is_null($payload)){
             if(!empty($payload->profile_pic)){
                 if($payload->profile_pic === 'default.png'){
-                    $payload->user_profile_pic = base_url('public/assets/images/users/').$payload->profile_pic;
+                    $payload->user_profile_pic = base_url('/').$payload->profile_pic;
                 }else{
-                    $payload->user_profile_pic = base_url('get-file/'.$payload->profile_pic);
+                    $path = WRITEPATH . 'uploads/';
+                    $fullpath = $path . $payload->profile_pic;
+                    if(is_file($fullpath)){
+                        $payload->user_profile_pic = base_url('get-file/'.$payload->profile_pic);
+                    }else{
+                        $payload->user_profile_pic = base_url('default.png');
+                    }
                 }
             }else{
-                $payload->user_profile_pic = base_url('public/assets/images/users/default.png');
+                $payload->user_profile_pic = base_url('default.png');
             }
         }
     }
