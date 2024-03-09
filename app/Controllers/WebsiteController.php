@@ -51,4 +51,23 @@ class WebsiteController extends BaseController
         
         return view('website/archive',['docArchive'=>$docArchive,'label'=>$label]);
     }
+
+    public function innerPage()
+    {
+        $rules = [
+            'type' => ['rules' => 'required|numeric']
+
+        ];
+        if(!$this->validate($rules)){
+            return redirect()->back();
+        }
+        $type = $this->request->getVar('type');
+        
+        $content = $this->websiteModel->getInnerPage($type);
+        if(is_null($content)){
+            return redirect('/');
+        }
+        
+        return view('website/innerPage',['content'=>$content]);
+    }
 }

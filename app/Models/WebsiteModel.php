@@ -97,4 +97,14 @@ class WebsiteModel extends Model
 
     }
 
+    public function getInnerPage($type){
+        $where = ['page_type'=>$type];
+
+        $builder = $this->db->table('content');
+        
+        $builder->where($where);
+        return $builder->get()->getRow();
+
+    }
+
 }

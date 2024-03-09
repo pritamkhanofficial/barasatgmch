@@ -85,173 +85,7 @@
 </head>
 
 <body>
-
-    <!-- ======= Top Bar ======= -->
-    <div id="topbar" class="d-flex align-items-center fixed-top bg-light-1 text-light">
-        <div class="container d-flex justify-content-center">
-            <div class="contact-info d-flex align-items-center">
-                <h3 class="fw-bold"><?=getHospitalSettings()->institute_name?></h3>
-            </div>
-            <!-- <div class="d-none d-lg-flex social-links fw-bold align-items-center">
-        <i class="bi bi-envelope"></i> 
-        &nbsp;&nbsp;<i class="bi bi-phone"></i> +91 8998989898
-      </div> -->
-        </div>
-    </div>
-
-    <!-- ======= Header ======= -->
-    <!-- ======= Header ======= -->
-    <header id="header" class="fixed-top">
-        <div class="container d-flex align-items-center">
-
-            <!-- <h1 class="logo me-auto"><a href="index.html">Medilab</a></h1> -->
-            <!-- Uncomment below if you prefer to use an image logo -->
-            <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
-            <nav id="navbar" class="navbar order-last order-lg-0 ms-auto">
-                <ul>
-                    <li><a class="nav-link scrollto fw-bold" href="index.php#hero">Home</a></li>
-                    <li class="dropdown"><a href="#counts"><span class="fw-bold">College</span> <i
-                                class="bi bi-chevron-down"></i></a>
-                        <ul>
-                            <li class="dropdown"><a href="index.php#faq"><span>Departments</span> <i
-                                        class="bi bi-chevron-right"></i></a>
-                                <ul>
-                                    <li><a href="department-group.php?group=prec">Pre-clinical</a></li>
-                                    <li><a href="department-group.php?group=parc">Para-clinical</a></li>
-                                    <li><a href="department-group.php?group=clin">Clinical</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown"><a href="index.php#faq"><span>Department wise Faculty & Publications
-                                        Details</span> <i class="bi bi-chevron-right"></i></a>
-                                <ul>
-                                    <li><a href="assets/documents/Physiology_Faculty Details.pdf"
-                                            target="_blank">Physiology</a></li>
-                                    <li><a href="assets/documents/FMT_Faculty Details.pdf" target="_blank">FMT</a></li>
-                                    <li><a href="assets/documents/Community Medicine_Faculty Details.pdf"
-                                            target="_blank">Community Medicine</a></li>
-                                    <li><a href="assets/documents/Pathology_ Website.pdf" target="_blank">Pathology</a>
-                                    </li>
-                                    <li><a href="assets/documents/microbilogy_Details Required for College Website-final.pdf"
-                                            target="_blank">Microbilogy</a></li>
-                                    <li><a href="assets/documents/General Medicine_Faculty Details.pdf"
-                                            target="_blank">General Medicine</a></li>
-                                    <li><a href="assets/documents/Gayene&Obs_Faculty Details.pdf" target="_blank">Gayene
-                                            & Obs</a></li>
-                                    <li><a href="assets/documents/Bio_Details_Required_for_College_Website.pdf"
-                                            target="_blank">Biochemistry</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown"><a href="assets/documents/BGMCH_Annual_Discloser_Report_2023.pdf"
-                                    target="_blank"><span>BGMCH Annual Discloser Report 2023</span> </a>
-                        </ul>
-                    </li>
-                    <li class="dropdown"><a href="javascript:void(0)"><span class="fw-bold">Hospital</span> <i
-                                class="bi bi-chevron-down"></i></a>
-                        <ul>
-                            <li><a class="nav-link scrollto" href="index.php#why-us">About the Hospital</a></li>
-                            <li><a class="nav-link scrollto fw-bold cursor-pointer" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal3" href="javascript:void(0)"><span>History of
-                                        Barasat</span></a></li>
-                            <!-- <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li> -->
-                        </ul>
-                    </li>
-                    <li class="dropdown"><a href="javascript:void(0)"><span class="fw-bold">Students' Section</span> <i
-                                class="bi bi-chevron-down"></i></a>
-                        <ul>
-                            <li><a class="nav-link scrollto" href=""></a></li>
-                            <li class="dropdown"><a href="#"><span>List of Students'</span> <i
-                                        class="bi bi-chevron-right"></i></a>
-                                <ul>
-                                    <li><a href="./assets/documents/MBBS Seats Information of BGMCH of Batch 2023-24_rotated.pdf"
-                                            target="_blank">Session - 2023-28</a></li>
-                                    <li><a href="./assets/documents/students_list_Adm_2022.pdf" target="_blank">Session
-                                            - 2022-27</a></li>
-
-                                </ul>
-                            </li>
-                            <li class="dropdown"><a href="#"><span>Forms</span> <i class="bi bi-chevron-right"></i></a>
-                                <ul>
-                                    <li><a href="./assets/documents/Admission_form_2023.pdf" target="_blank">Admission
-                                            Form 2023</a></li>
-                                    <li><a href="./assets/documents/AIQ_Checklist.pdf" target="_blank">AIQ Checklist</a>
-                                    </li>
-                                    <li><a href="./assets/documents/Bond_Proforma.pdf" target="_blank">Bond Proforma</a>
-                                    </li>
-                                    <li><a href="./assets/documents/Check_List_SQ.pdf" target="_blank">Check List SQ</a>
-                                    </li>
-                                    <li><a href="./assets/documents/Document_Receipt.pdf" target="_blank">Document
-                                            Receipt</a></li>
-                                    <li><a href="./assets/documents/Fee_Payment_2023.pdf" target="_blank">Fee
-                                            Payment</a></li>
-                                    <li><a href="./assets/documents/Medical_Certificate.pdf" target="_blank">Medical
-                                            Certificate</a></li>
-                                    <li><a href="./assets/documents/Undertaking.pdf" target="_blank">Undertaking</a>
-                                    </li>
-                                    <li><a href="./assets/documents/Willingness.pdf" target="_blank">Willingness</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="dropdown"><a href="#"><span>Student Notice</span> <i
-                                        class="bi bi-chevron-right"></i></a>
-                                <ul>
-                                    <li><a href="./assets/documents/2nd phase class routine_rotated.pdf"
-                                            target="_blank">2nd phase class routine</a></li>
-                                    <li><a href="./assets/documents/1st Phase MBBS Weekly Schedule_rotated.pdf"
-                                            target="_blank">1st Phase MBBS Weekly Schedule</a></li>
-                                    <li><a href="./assets/documents/Foundation Course Details of MBBS 2023-24_rotated.pdf"
-                                            target="_blank">Foundation Course Details of MBBS 2023-24</a></li>
-                                    <li><a href="./assets/documents/NOTICE_for_admission_of_SQ_students.pdf"
-                                            target="_blank">NOTICE for admission of SQ students</a></li>
-                                    <li><a href="./assets/documents/Notice_for_AIQ_students.pdf" target="_blank">Notice
-                                            for AIQ students</a></li>
-                                </ul>
-                            </li>
-                            <li><a class="nav-link scrollto" href="./assets/documents/Fees_structure.pdf">Fees
-                                    Structure</a></li>
-                        </ul>
-                    </li>
-                    <!--<li><a class="nav-link scrollto fw-bold" href="#faq">Departments</a></li>-->
-                    <li><a class="nav-link scrollto fw-bold" href="index.php#gallery">Gallery</a></li>
-                    <li><a class="nav-link scrollto fw-bold cursor-pointer" data-bs-toggle="modal"
-                            data-bs-target="#exampleModal" href="javascript:void(0)"><span>Citizens Charter</span></a>
-                        <!-- <ul>
-              <li><a class="nav-link scrollto" href="#counts">OPD Department</a></li>
-              <li><a target="_blank" href="./documents/bed-distribution.pdf">IPD Department</a></li>
-              <li><a target="_blank" href="./documents/List-of-faculties.pdf">Special Clinic</a></li>
-              <li><a target="_blank" href="./documents/WBUHS-officials.pdf">Other Services</a></li>
-              <li><a target="_blank" href="./documents/WBUHS-officials.pdf">Ongoing National Program</a></li>
-              <li><a target="_blank" href="./documents/WBUHS-officials.pdf">Diagnostic Services</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-            </ul> -->
-                    </li>
-                    <li><a class="nav-link scrollto fw-bold" href="#contact">Contact</a></li>
-                </ul>
-                <i class="bi bi-list mobile-nav-toggle"></i>
-            </nav><!-- .navbar -->
-
-            <!-- <a href="#appointment" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a> -->
-
-        </div>
-    </header>
-    <!-- End Header -->
-    <!-- End Header -->
+    <?=view('component/front/header')?>
 
     <!-- ======= Hero Section ======= -->
     <section id="hero" class="d-flex align-items-center">
@@ -742,189 +576,6 @@
                 </div>
             </div>
         </section>
-        <!-- End Frequently Asked Questions Section -->
-
-        <!-- ======= Doctors Section ======= -->
-        <!-- <section id="doctors" class="doctors">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Doctors</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-        </div>
-
-        <div class="row">
-
-          <div class="col-lg-6">
-            <div class="member d-flex align-items-start">
-              <div class="pic"><img src="assets/img/doctors/doctors-1.jpeg" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Walter White</h4>
-                <span>Chief Medical Officer</span>
-                <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
-                <div class="social">
-                  <a href=""><i class="ri-twitter-fill"></i></a>
-                  <a href=""><i class="ri-facebook-fill"></i></a>
-                  <a href=""><i class="ri-instagram-fill"></i></a>
-                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6 mt-4 mt-lg-0">
-            <div class="member d-flex align-items-start">
-              <div class="pic"><img src="assets/img/doctors/doctors-2.jpeg" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Sarah Jhonson</h4>
-                <span>Anesthesiologist</span>
-                <p>Aut maiores voluptates amet et quis praesentium qui senda para</p>
-                <div class="social">
-                  <a href=""><i class="ri-twitter-fill"></i></a>
-                  <a href=""><i class="ri-facebook-fill"></i></a>
-                  <a href=""><i class="ri-instagram-fill"></i></a>
-                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6 mt-4">
-            <div class="member d-flex align-items-start">
-              <div class="pic"><img src="assets/img/doctors/doctors-3.jpeg" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>William Anderson</h4>
-                <span>Cardiology</span>
-                <p>Quisquam facilis cum velit laborum corrupti fuga rerum quia</p>
-                <div class="social">
-                  <a href=""><i class="ri-twitter-fill"></i></a>
-                  <a href=""><i class="ri-facebook-fill"></i></a>
-                  <a href=""><i class="ri-instagram-fill"></i></a>
-                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6 mt-4">
-            <div class="member d-flex align-items-start">
-              <div class="pic"><img src="assets/img/doctors/doctors-4.jpeg" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Amanda Jepson</h4>
-                <span>Neurosurgeon</span>
-                <p>Dolorum tempora officiis odit laborum officiis et et accusamus</p>
-                <div class="social">
-                  <a href=""><i class="ri-twitter-fill"></i></a>
-                  <a href=""><i class="ri-facebook-fill"></i></a>
-                  <a href=""><i class="ri-instagram-fill"></i></a>
-                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section> -->
-        <!-- End Doctors Section -->
-
-
-
-        <!-- ======= Testimonials Section ======= -->
-        <!-- <section id="testimonials" class="testimonials">
-      <div class="container">
-
-        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
-          <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-              <div class="testimonial-wrap">
-                <div class="testimonial-item">
-                  <img src="assets/img/testimonials/testimonials-1.jpeg" class="testimonial-img" alt="">
-                  <h3>Saul Goodman</h3>
-                  <h4>Ceo &amp; Founder</h4>
-                  <p>
-                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                    Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="testimonial-wrap">
-                <div class="testimonial-item">
-                  <img src="assets/img/testimonials/testimonials-2.jpeg" class="testimonial-img" alt="">
-                  <h3>Sara Wilsson</h3>
-                  <h4>Designer</h4>
-                  <p>
-                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                    Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                  </p>
-                </div>
-              </div>
-            </div>
-            
-
-            <div class="swiper-slide">
-              <div class="testimonial-wrap">
-                <div class="testimonial-item">
-                  <img src="assets/img/testimonials/testimonials-3.jpeg" class="testimonial-img" alt="">
-                  <h3>Jena Karlis</h3>
-                  <h4>Store Owner</h4>
-                  <p>
-                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                    Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                  </p>
-                </div>
-              </div>
-            </div>
-            
-
-            <div class="swiper-slide">
-              <div class="testimonial-wrap">
-                <div class="testimonial-item">
-                  <img src="assets/img/testimonials/testimonials-4.jpeg" class="testimonial-img" alt="">
-                  <h3>Matt Brandon</h3>
-                  <h4>Freelancer</h4>
-                  <p>
-                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                    Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                  </p>
-                </div>
-              </div>
-            </div>
-            
-
-            <div class="swiper-slide">
-              <div class="testimonial-wrap">
-                <div class="testimonial-item">
-                  <img src="assets/img/testimonials/testimonials-5.jpeg" class="testimonial-img" alt="">
-                  <h3>John Larson</h3>
-                  <h4>Entrepreneur</h4>
-                  <p>
-                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                    Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                  </p>
-                </div>
-              </div>
-            </div>
-            
-
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-
-      </div>
-    </section> -->
-
-
         <!-- ======= Gallery Section ======= -->
         <section id="gallery" class="gallery">
             <div class="container">
@@ -979,7 +630,7 @@
                             <i class="bi bi-envelope"></i>
                             <p>Mail: <?=getHospitalSettings()->mail_1?></p>
                             <p>
-                            <?=getHospitalSettings()->mail_2?>
+                                <?=getHospitalSettings()->mail_2?>
                             </p>
                         </div>
                     </div>
@@ -988,9 +639,8 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <!-- <small class="d-block text-end fst-italic">< ?=getHospitalSettings()->map?></small> -->
-                        <iframe
-                            src="<?=getHospitalSettings()->map?>"
-                            height="450" style="border:0;width:100%" allowfullscreen="" loading="lazy"></iframe>
+                        <iframe src="<?=getHospitalSettings()->map?>" height="450" style="border:0;width:100%"
+                            allowfullscreen="" loading="lazy"></iframe>
                     </div>
 
                 </div>
@@ -1058,134 +708,109 @@
 
     </main><!-- End #main -->
 
-    <!-- ======= Footer ======= -->
-    <footer id="footer" class="bg-light-1">
-
-        <div class="container d-md-flex py-4">
-
-            <div class="row w-100">
-                <div class="copyright text-start col-md-6 text-white">
-                    &copy; Copyright <strong><span>B.G.M.C.H.</span></strong>. All Rights Reserved
+    <?=view('component/front/footer')?>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Citizens Charter</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="credits text-end col-md-6 text-white">
-                    With Gratitude From | <a target="_blank" href="https://sketchmeglobal.com">Sketch Me Global</a>
+                <div class="modal-body">
+                    <img src="./assets/documents/citizen-charter.jpg" class="img-fluid">
                 </div>
-            </div>
-            <!-- <div class="social-links text-center text-md-right pt-3 pt-md-0">
-        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-      </div> -->
-
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-                aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Citizens Charter</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <img src="./assets/documents/citizen-charter.jpg" class="img-fluid">
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        </div>
-                    </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
-
-            <!-- Modal -->
-            <div class="modal fade" id="showHospitalHeadModalModal" data-bs-backdrop="static" data-bs-keyboard="false"
-                tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="showHospitalHeadModalLabel"></h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body" id="showHospitalHeadModalBody">
-
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-                aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">History of Barasat</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <p>
-                                Barasat, the District Head Quarter of North 24 Parganas, is now being a part of greater
-                                Kolkata . The town is situated on an important railway and roadway junction and well
-                                connected to the different parts of the State. Several significant roads like National
-                                Highway 34 (Krishnanagar Road leading towards North Bengal), Jessore Road (road leading
-                                to Jessore in Bangladesh via Bongaon), road leading to Basirhat etc. cross through the
-                                town.
-                            </p>
-                            <p>
-                                Netaji Subhas Chandra Bose International Airport, Kolkata is only 8 km from Barasat.
-                            </p>
-                            <p>
-                                Dated early in 1600 during the Mogul period, Sankar Chakraborty (a commander of the
-                                zamindar Pratapaditya and king of Jessore in present-day Bangladesh) came to Barasat,
-                                and established himself. In 1700, Hazarat Ekdil Shah, a renowned social worker moved to
-                                this town. While Maharaj Pratapaditya made his way to Kolkata from Jessore and
-                                Sirajudullah went to Kolkata from Murshidabad via Barasat on a road which became these
-                                two national highways later on.
-                            </p>
-                            <p>
-                                Warren Hastings built his villa in the heart of Barasat and Bankim Chandra Chatterjee
-                                was the town's first Indian deputy magistrate.Titumir, a farmer, fomented a revolution
-                                against indigo merchants in Barasat. Iswar Chandra Vidyasagar, Pyari Charan Sarkar and
-                                Kalikrishna Mitra were known for social reformation in the town, including women's
-                                education and widow remarriage.
-                            </p>
-
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Modal -->
-            <div class="modal fade" id="hospital" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-                aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">History of Barasat</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body" id="showHospitalBody">
-
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
-    </footer><!-- End Footer -->
+    </div>
 
-    <div id="preloader"></div>
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-            class="bi bi-arrow-up-short"></i></a>
+    <!-- Modal -->
+    <div class="modal fade" id="showHospitalHeadModalModal" data-bs-backdrop="static" data-bs-keyboard="false"
+        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="showHospitalHeadModalLabel"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="showHospitalHeadModalBody">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">History of Barasat</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        Barasat, the District Head Quarter of North 24 Parganas, is now being a part of greater
+                        Kolkata . The town is situated on an important railway and roadway junction and well
+                        connected to the different parts of the State. Several significant roads like National
+                        Highway 34 (Krishnanagar Road leading towards North Bengal), Jessore Road (road leading
+                        to Jessore in Bangladesh via Bongaon), road leading to Basirhat etc. cross through the
+                        town.
+                    </p>
+                    <p>
+                        Netaji Subhas Chandra Bose International Airport, Kolkata is only 8 km from Barasat.
+                    </p>
+                    <p>
+                        Dated early in 1600 during the Mogul period, Sankar Chakraborty (a commander of the
+                        zamindar Pratapaditya and king of Jessore in present-day Bangladesh) came to Barasat,
+                        and established himself. In 1700, Hazarat Ekdil Shah, a renowned social worker moved to
+                        this town. While Maharaj Pratapaditya made his way to Kolkata from Jessore and
+                        Sirajudullah went to Kolkata from Murshidabad via Barasat on a road which became these
+                        two national highways later on.
+                    </p>
+                    <p>
+                        Warren Hastings built his villa in the heart of Barasat and Bankim Chandra Chatterjee
+                        was the town's first Indian deputy magistrate.Titumir, a farmer, fomented a revolution
+                        against indigo merchants in Barasat. Iswar Chandra Vidyasagar, Pyari Charan Sarkar and
+                        Kalikrishna Mitra were known for social reformation in the town, including women's
+                        education and widow remarriage.
+                    </p>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="hospital" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">History of Barasat</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="showHospitalBody">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
     <!-- Vendor JS Files -->
     <script src="http://barasatgmch.ac.in/assets/vendor/purecounter/purecounter.js"></script>

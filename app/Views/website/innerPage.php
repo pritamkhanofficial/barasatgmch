@@ -55,57 +55,83 @@
 </head>
 
 <body>
-<?=view('component/front/header')?>
+
+    <?=view('component/front/header')?>
 
     <!-- ======= Hero Section ======= -->
 
     <main id="main" style="margin-top:10rem" class="container-md">
+
         <div class="row">
-            <h5 class="header-style"><?=$label?></h5>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Topic</th>
-                        <th scope="col">Link</th>
-                        <th scope="col">Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach($docArchive as $key=>$row){ ?>
-                        <tr>
-                        <th scope="row">1</th>
-                        <td><?=$row->title?></td>
-                        <td><a href="<?=base_url('get-file/' . $row->file)?>" target="_blank">Link</a></td>
-                        <td>-</td>
-                    </tr>
-                    <?php } ?>
-                </tbody>
-            </table>
+            <!-- <h5 class="header-style">< ?=$label?></h5> -->
+            <div class="col-lg-12">
+                <?=$content->content?>
+            </div>
+            <div class="col-lg-12 mt-3">
+                <div class="card">
+                    <div class="card-body">
+                        <a href="<?=base_url('get-file/' . $content->file_1) ?>"><?=$content->title_1?></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 mt-3">
+                <div class="card">
+                    <div class="card-body">
+                        <a href="<?=base_url('get-file/' . $content->file_2) ?>"><?=$content->title_2?></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 mt-3">
+                <div class="card">
+                    <div class="card-body">
+                        <a href="<?=base_url('get-file/' . $content->file_3) ?>"><?=$content->title_3?></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 mt-3">
+                <div class="card">
+                    <div class="card-body">
+                        <a href="<?=base_url('get-file/' . $content->file_4) ?>"><?=$content->title_4?></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 mt-3">
+                <div class="card">
+                    <div class="card-body">
+                        <a href="<?=base_url('get-file/' . $content->file_5) ?>"><?=$content->title_5?></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 mt-3">
+                <div class="card">
+                    <div class="card-body">
+                        <a href="<?=base_url('get-file/' . $content->file_6) ?>"><?=$content->title_6?></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 mt-3">
+                <div class="card">
+                    <div class="card-body">
+                        <a href="<?=base_url('get-file/' . $content->file_7) ?>"><?=$content->title_7?></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 mt-3">
+                <div class="card">
+                    <div class="card-body">
+                        <a href="<?=base_url('get-file/' . $content->file_8) ?>"><?=$content->title_8   ?></a>
+                    </div>
+                </div>
+            </div>
+
+
+
         </div>
+
     </main>
 
     <?=view('component/front/footer')?>
 
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Citizens Charter</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <img src="./assets/documents/citizen-charter.jpg" class="img-fluid">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    
     <!-- Vendor JS Files -->
     <script src="https://barasatgmch.ac.in/assets/vendor/purecounter/purecounter.js"></script>
     <script src="https://barasatgmch.ac.in/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
