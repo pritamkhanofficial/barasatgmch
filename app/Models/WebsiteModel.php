@@ -106,5 +106,30 @@ class WebsiteModel extends Model
         return $builder->get()->getRow();
 
     }
+    public function department($type){
+        $where = ['type'=>$type,'is_active'=>1,'deleted_at'=>NULL];
+
+        $builder = $this->db->table('department');
+        
+        $builder->where($where);
+        return $builder->get()->getResult();
+
+    }
+    public function getDepartmentRow($id){
+        $where = ['id'=>$id,'is_active'=>1,'deleted_at'=>NULL];
+        $builder = $this->db->table('department');
+        $builder->where($where);
+        return $builder->get()->getRow();
+    }
+    public function staff($id){
+        $where = ['department_id'=>$id,'type'=>'TS','staff.is_active'=>1,'staff.deleted_at'=>NULL];
+
+        $builder = $this->db->table('staff');
+        $builder->select('staff.id,staff.label as staff_name,ds.label as designation,staff.designation_id');
+        $builder->join('designation ds','ds.id=staff.designation_id','left');
+        $builder->where($where);
+        return $builder->get()->getResult();
+
+    }
 
 }

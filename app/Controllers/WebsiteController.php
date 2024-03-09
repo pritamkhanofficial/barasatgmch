@@ -70,4 +70,59 @@ class WebsiteController extends BaseController
         
         return view('website/innerPage',['content'=>$content]);
     }
+
+    public function department()
+    {
+        $rules = [
+            'type' => ['rules' => 'required|in_list[preclinical,paraclinical,clinical]']
+
+        ];
+        if(!$this->validate($rules)){
+            return redirect()->back();
+        }
+        $type = $this->request->getVar('type');
+        
+        
+        $department = $this->websiteModel->department($type);
+        $label = "";
+        if($type == "preclinical"){
+            $label = "Pre-clinic";
+        }
+        if($type == "paraclinical"){
+            $label = "Para-clinic";
+        }
+        if($type == "clinical"){
+            $label = "Clinical";
+        }
+        
+        return view('website/department',['department'=>$department,'label'=>$label]);
+    }
+
+    public function staff()
+    {
+        $rules = [
+            'id' => ['rules' => 'required|numeric']
+
+        ];
+        if(!$this->validate($rules)){
+            return redirect()->back();
+        }
+        $id = $this->request->getVar('id');
+        
+        
+        $staff = $this->websiteModel->staff($id);
+        $department = $this->websiteModel->getDepartmentRow($id);
+        $label = "";
+        /* if($type == "preclinical"){
+            $label = "Pre-clinic";
+        }
+        if($type == "paraclinical"){
+            $label = "Para-clinic";
+        }
+        if($type == "clinical"){
+            $label = "Clinical";
+        } */
+        // getPrint($staff);
+        return view('website/staff',['staff'=>$staff,'department'=>$department]);
+    }
 }

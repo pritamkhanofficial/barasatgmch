@@ -23,9 +23,9 @@
                             <li class="dropdown"><a href="index.php#faq"><span>Departments</span> <i
                                         class="bi bi-chevron-right"></i></a>
                                 <ul>
-                                    <li><a href="department-group.php?group=prec">Pre-clinical</a></li>
-                                    <li><a href="department-group.php?group=parc">Para-clinical</a></li>
-                                    <li><a href="department-group.php?group=clin">Clinical</a></li>
+                                    <li><a href="<?=base_url('department?type=preclinical')?>">Pre-clinical</a></li>
+                                    <li><a href="<?=base_url('department?type=paraclinical')?>">Para-clinical</a></li>
+                                    <li><a href="<?=base_url('department?type=clinical')?>">Clinical</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown"><a href="index.php#faq"><span>Department wise Faculty & Publications

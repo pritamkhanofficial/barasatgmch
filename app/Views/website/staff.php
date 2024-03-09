@@ -14,29 +14,37 @@
 </head>
 
 <body>
-<?=view('component/front/header')?>
+    <?=view('component/front/header')?>
 
     <!-- ======= Hero Section ======= -->
 
     <main id="main" style="margin-top:10rem" class="container-md">
         <div class="row">
-            <h5 class="header-style"><?=$label?></h5>
-            <table class="table">
+            <?php if(!empty($department->description)){  ?>
+            <h3 class="text-center">About the department of <?=$department->label?> </h3>
+            <hr>
+            <p class="text-justify">
+                <?=$department->description?>
+            </p>
+            <?php } ?>
+
+            <h3 class="text-center">Departmental Teaching Staff of <?=$department->label?> </h3>
+            <hr>
+
+            <table class="table table-hover table-bordered table-stripped">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Topic</th>
-                        <th scope="col">Link</th>
-                        <th scope="col">Action</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Designation</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach($docArchive as $key=>$row){ ?>
-                        <tr>
-                        <th scope="row">1</th>
-                        <td><?=$row->title?></td>
-                        <td><a href="<?=base_url('get-file/' . $row->file)?>" target="_blank">Link</a></td>
-                        <td>-</td>
+                    <?php foreach($staff as $key=>$row){ ?>
+                    <tr>
+                        <th scope="row"><?=++$key?></th>
+                        <td><?=$row->staff_name?></td>
+                        <td><?=$row->designation?></td>
                     </tr>
                     <?php } ?>
                 </tbody>
@@ -64,7 +72,7 @@
             </div>
         </div>
     </div>
-    
+
     <?=view('component/front/script')?>
     <script type="text/javascript">
     $(document).ready(function() {

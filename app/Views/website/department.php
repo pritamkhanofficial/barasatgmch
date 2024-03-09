@@ -25,17 +25,17 @@
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Topic</th>
+                        <th scope="col">Name</th>
                         <th scope="col">Link</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach($docArchive as $key=>$row){ ?>
+                    <?php foreach($department as $key=>$row){ ?>
                         <tr>
-                        <th scope="row">1</th>
-                        <td><?=$row->title?></td>
-                        <td><a href="<?=base_url('get-file/' . $row->file)?>" target="_blank">Link</a></td>
+                        <th scope="row"><?=++$key?></th>
+                        <td><?=$row->label?></td>
+                        <td><a href="<?=base_url('staff?id=' . $row->id)?>" target="_blank">Link</a></td>
                         <td>-</td>
                     </tr>
                     <?php } ?>

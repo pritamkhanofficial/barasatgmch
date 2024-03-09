@@ -9,6 +9,8 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'WebsiteController::home');
 $routes->get('archive', 'WebsiteController::archive');
 $routes->get('inner-page', 'WebsiteController::innerPage');
+$routes->get('department', 'WebsiteController::department');
+$routes->get('staff', 'WebsiteController::staff');
 $routes->get('get-file/(:any)', 'FileController::getFile/$1');
 
 $routes->group('back-panel', static function ($routes) {
