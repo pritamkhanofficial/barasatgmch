@@ -394,47 +394,40 @@
 
         <!-- ======= About Section ======= -->
         <section id="about" class="about">
+            <?php if(!empty($hospital_head)){ ?>
             <div class="container-fluid">
-
                 <div class="row bg-light-1 p-4">
-
                     <div class="container">
                         <div class="row row-flex">
-
+                            <?php 
+                            foreach($hospital_head as $key=>$row){
+                            ?>
                             <div class="col-lg-6">
-
                                 <div class="card mb-3">
                                     <div class="row g-0">
                                         <div class="col-lg-5 text-center shadow-sm">
-                                            <img src="./assets/img/principal.jpg"
+                                            <img src="<?=base_url('get-file/' . $row->image)?>"
                                                 class="img-fluid d-block mx-auto border-b-m border-secondary" alt="...">
-                                            <p class="fw-bold m-0">Prof. (Dr.) Manas Kumar Bandyopadhyay</p>
+                                            <p class="fw-bold m-0"><?=$row->title_2?></p>
                                             <hr class="m-0">
-                                            <p class="mb-0">MD(Microbiology)</p>
+                                            <p class="mb-0"><?=$row->title_3?></p>
                                             <hr class="m-0">
-                                            <h6 class="small">Principal</h6>
+                                            <h6 class="small"><?=$row->title_4?></h6>
                                             <hr class="m-0">
-                                            <p class="mb-0">Barasat Government Medical College, Barasat, 24 Parganas
-                                                (North)</p>
+                                            <p class="mb-0"><?=$row->title_5?></p>
                                             <hr class="m-0">
                                         </div>
                                         <div class="col-lg-7">
                                             <div class="card-body text-justify">
-                                                <h5>From the desk of the Principal</h5>
+                                            <span class="d-none" id="modalData_<?=$key?>">
+                                                    <?=$row->description?>
+                                                </span>
+                                                <h5 id="modalLabel_<?=$key?>"><?=$row->title_1?></h5>
                                                 <hr>
-                                                <p>
-                                                    Hello everyone
-                                                    <br>
-                                                    I would like to take pride in introducing myself as the First
-                                                    Principal of Barasat Government Medical College and Hospital.
-                                                    <br>
-                                                    Health of a population is to be considered as a distinct key issue
-                                                    in public policy discourse in every mature society. Though it is
-                                                    known that ‘health is wealth’, Health challenges have always been a
-                                                    concern for us...
-                                                </p>
+                                                <?= word_limiter($row->description, 60);?>
+                                                
                                                 <a class="nav-link scrollto fw-bold text-info float-end mt-1"
-                                                    data-bs-toggle="modal" data-bs-target="#exampleModal1"
+                                                    onClick='showHospitalHeadModal(<?=$key?>)'
                                                     href="javascript:void(0)"><span>Read more...</span></a>
                                             </div>
                                         </div>
@@ -442,83 +435,14 @@
                                 </div>
 
                             </div>
-
-                            <div class="col-lg-6">
-
-                                <div class="card mb-3">
-                                    <div class="row g-0">
-                                        <div class="col-lg-5 text-center shadow-sm">
-                                            <img src="./assets/img/msvp1.jpg"
-                                                class="img-fluid d-block mx-auto border-b-m border-secondary" alt="...">
-                                            <p class="m-0 fw-bold">Prof. (Dr.) Prabir Kumar Mukhopadhyay</p>
-                                            <hr class="m-0">
-                                            <p class="mb-0">DCH, MD (Microbiology)</p>
-                                            <hr class="m-0">
-                                            <h6 class="small">Medical Superintendent cum Vice Principal</h6>
-                                            <hr class="m-0">
-                                            <p class="mb-0">Barasat Government Medical College, Barasat, 24 Parganas
-                                                (North)</p>
-                                            <hr class="m-0">
-                                        </div>
-                                        <div class="col-lg-7 text-justify">
-                                            <div class="card-body">
-                                                <h5>From the desk of the MSVP</h5>
-                                                <hr>
-                                                <p>
-                                                    It is my pride, privilege and honour to act as MSVP from the
-                                                    inception of this newly formed medical college to provide health
-                                                    care facilities to large number of needy people coming from
-                                                    different parts of district North 24 Parganas and adjacent catchment
-                                                    areas.
-                                                    The existing Barasat District Hospital (BDH), a pioneer in West
-                                                    Bengal Health Care System, has been adopted and...
-                                                </p>
-                                                <p class="d-none">
-                                                    converted to Barasat Government Medical College & Hospital (BGMCH).
-                                                    Presently it is equipped with 600 Indoor beds including different
-                                                    types of critical care services like CCU, ICCU, SNCU, PICU, NICU
-                                                    etc. This hospital is catering huge number of people with all broad
-                                                    specialty facilities along with 24x7 diagnostic facility and Blood
-                                                    Bank services. A well-established Nursing Training School within
-                                                    this campus is an added advantage of this medical college. This
-                                                    hospital is also actively participating for successfully
-                                                    implementation of different State and Central Government health
-                                                    projects for many years.
-                                                    The conversion process of this BDH to BGMCH is progressing vary
-                                                    rapidly with the construction of Academic Building (G+6), Boy’s
-                                                    Hostel (G+9), Girl’s Hostel (G+9), Nurse’s Accommodation (G+6),
-                                                    quarters for teaching staffs(G+9) , quarters for non- teaching
-                                                    staffs(G+9) and OPD complex (G+9). The necessary renovations of
-                                                    existing hospital and augmentation of patient care services is also
-                                                    done as per the need of the medical college.
-                                                    I hope in future Barasat Government Medical College & Hospital
-                                                    (BGMCH) will play a leading role as peripheral medical college with
-                                                    significant contribution in the Health Care Systems by providing
-                                                    good doctors in one hand and exerting different kind of modern
-                                                    health care facilities on the other hand.
-                                                    I wish every success of this institution in future in all regards so
-                                                    that it can be a role model of other institutions.
-                                                    Thank you all.
-                                                    Prof. (Dr.) Prabir Kumar Mukhopadhyay
-                                                    Medical Superintendent cum Vice-Principal
-                                                    Barasat Government Medical College & Hospital
-                                                </p>
-                                                <a class="nav-link scrollto fw-bold text-info float-end mt-1"
-                                                    data-bs-toggle="modal" data-bs-target="#exampleModal2"
-                                                    href="javascript:void(0)"><span>Read more...</span></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-
+                            <?php } ?>
                         </div>
                     </div>
 
                 </div>
 
             </div>
+            <?php } ?>
         </section><!-- End About Section -->
 
         <!--student section-->
@@ -1221,44 +1145,15 @@
             </div>
 
             <!-- Modal -->
-            <div class="modal fade" id="exampleModal1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            <div class="modal fade" id="showHospitalHeadModalModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
                 aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">From the desk of the Principal</h5>
+                            <h5 class="modal-title" id="showHospitalHeadModalLabel"></h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body">
-
-                            <p>Hello everyone</p>
-                            <p>I would like to take pride in introducing myself as the First Principal of Barasat
-                                Government Medical College and Hospital. </p>
-                            <p>Health of a population is to be considered as a distinct key issue in public policy
-                                discourse in every mature society. Though it is known that ‘health is wealth’, Health
-                                challenges have always been a concern for us. </p>
-                            <p>The need of the hour is a robust healthcare system, more access to technologically
-                                advanced and free clinical services and development of expertise through introduction of
-                                Medical colleges.</p>
-                            <p>It is our pleasure that the Government of West Bengal has identified that North 24
-                                Parganas District Hospital at Barasat to be developed into a tertiary care Hospital in
-                                the form of a Medical College having the latest technological supports providing
-                                specialty and super specialty health services to this densely populated locality and
-                                fringes. This will also fulfill the demand dy providing all health facilities to the
-                                local people. This will induce skilled personnel through introduction of upgraded
-                                medical education and thus lessen the dependence on referral systems. This is expected
-                                to save not only time or money but also the harassments faced by thousands while
-                                commuting and on logistics.</p>
-
-                            <p>
-                                A college is known by its students, so hope the students who will come out as medicos
-                                will glorify this Institute in due course of time.
-                                <hr>
-                                - Dr Manas Kr Bandyopadhyay<br>
-                                -Principal<br>
-                                -Barasat Government Medical College
-
-                            </p>
+                        <div class="modal-body" id="showHospitalHeadModalBody">
 
                         </div>
                         <div class="modal-footer">
@@ -1267,64 +1162,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-                aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">From the desk of the MSVP</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <p>
-                                It is my pride, privilege and honour to act as MSVP from the inception of this newly
-                                formed medical college to provide health care facilities to large number of needy people
-                                coming from different parts of district North 24 Parganas and adjacent catchment areas.
-                            </p>
-                            <p>
-                                The existing Barasat District Hospital (BDH), a pioneer in West Bengal Health Care
-                                System, has been adopted and converted to Barasat Government Medical College &amp;
-                                Hospital (BGMCH). Presently it is equipped with 600 Indoor beds including different
-                                types of critical care services like CCU, ICCU, SNCU, PICU, NICU etc. This hospital is
-                                catering huge number of people with all broad specialty facilities along with 24x7
-                                diagnostic facility and Blood Bank services. A well-established Nursing Training School
-                                within this campus is an added advantage of this medical college. This hospital is also
-                                actively participating for successfully implementation of different State and Central
-                                Government health projects for many years.
-                            </p>
-                            <p>
-                                The conversion process of this BDH to BGMCH is progressing vary rapidly with the
-                                construction of Academic Building (G+6), Boy’s Hostel (G+9), Girl’s Hostel (G+9),
-                                Nurse’s Accommodation (G+6), quarters for teaching staffs(G+9) , quarters for non-
-                                teaching staffs(G+9) and OPD complex (G+9). The necessary renovations of existing
-                                hospital and augmentation of patient care services is also done as per the need of the
-                                medical college.
-                            </p>
-                            <p>
-                                I hope in future Barasat Government Medical College &amp; Hospital (BGMCH) will play a
-                                leading role as peripheral medical college with significant contribution in the Health
-                                Care Systems by providing good doctors in one hand and exerting different kind of modern
-                                health care facilities on the other hand.
-                                I wish every success of this institution in future in all regards so that it can be a
-                                role model of other institutions.
-                                Thank you all.
-                            </p>
-                            <hr>
-                            <p>
-                                - Prof. (Dr.) Prabir Kumar Mukhopadhyay <br>
-                                - Medical Superintendent cum Vice-Principal <br>
-                                - Barasat Government Medical College &amp; Hospital
-                            </p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
             <!-- Modal -->
             <div class="modal fade" id="exampleModal3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
                 aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -1474,6 +1311,16 @@
         })
 
     })
+
+
+    function showHospitalHeadModal(key){ 
+        var modalData = $('#modalData_' + key).html();
+        var modalLabel = $('#modalLabel_' + key).html();
+        $("#showHospitalHeadModalBody").html(modalData);
+        $("#showHospitalHeadModalLabel").html(modalLabel);
+        $('#showHospitalHeadModalModal').modal('show'); // Show modal
+
+    }
     </script>
 
 

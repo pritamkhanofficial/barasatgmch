@@ -34,6 +34,7 @@ class WebsiteController extends BaseController
         $notice = $this->websiteModel->getDocument('GN');
         $department = $this->websiteModel->getDepartment();
         $gallery = $this->websiteModel->getGallery();
+        $hospital_head = $this->websiteModel->getHospitalHead();
         return view('website/home',[
             'sliders'=>$sliders,
             //'news'=>$news,
@@ -41,7 +42,7 @@ class WebsiteController extends BaseController
             'notice'=>$notice,
             'department'=>$department,
             'gallery'=>$gallery,
-            //'hospital_head'=>$hospital_head,
+            'hospital_head'=>$hospital_head,
             //'anti_ragging_section'=>$anti_ragging_section,
         ]);
     }

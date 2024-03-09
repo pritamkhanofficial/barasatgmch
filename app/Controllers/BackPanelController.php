@@ -875,12 +875,13 @@ class BackPanelController extends BaseController
     public function hospitalHead(){
         $crud = new GroceryCrud();
         $crud->displayAs('image','Head Image');
+        $crud->displayAs('title_1','Title');
         $crud->displayAs('is_active','Status');
         $crud->where("deleted_at", NULL);
-        $crud->columns(['image','title','phone','email','is_active']);
-        $crud->fields(['image','title','sub_title','phone','email','address','is_active','created_by','updated_at','updated_by']);
+        $crud->columns(['image','title_1','phone','email','is_active']);
+        $crud->fields(['image','title_1','title_2','title_3','title_4','title_5','description','phone','email','address','is_active','created_by','updated_at','updated_by']);
         $this->fileHandle($crud, 'image','image');
-        $crud->setTexteditor(['address']);
+        $crud->setTexteditor(['address','description']);
         if ($crud->getState() === 'delete') {
             $result = $this->websiteModel->softDelete('hospital_head', $crud->getStateInfo()->primary_key);
             if($result){

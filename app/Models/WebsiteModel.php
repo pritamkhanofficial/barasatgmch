@@ -84,7 +84,7 @@ class WebsiteModel extends Model
 
     }
     public function getHospitalHead(){
-        return $this->db->table('hospital_head')->where(['is_active'=>1,'deleted_at'=>NULL])->limit(3)->get()->getResult();
+        return $this->db->table('hospital_head')->where(['is_active'=>1,'deleted_at'=>NULL])->limit(2)->get()->getResult();
 
     }
 

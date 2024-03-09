@@ -15,9 +15,9 @@ class HospitalHead extends Migration
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
-            'title' => [
+            'title_1' => [
                 'type'       => 'VARCHAR',
-                'constraint' => '100',
+                'constraint' => '255',
             ],
             'sub_title' => [
                 'type'       => 'VARCHAR',
