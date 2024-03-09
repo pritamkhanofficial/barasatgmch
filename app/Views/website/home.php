@@ -90,7 +90,7 @@
     <div id="topbar" class="d-flex align-items-center fixed-top bg-light-1 text-light">
         <div class="container d-flex justify-content-center">
             <div class="contact-info d-flex align-items-center">
-                <h3 class="fw-bold">Barasat Government Medical College &amp; Hospital</h3>
+                <h3 class="fw-bold"><?=getHospitalSettings()->institute_name?></h3>
             </div>
             <!-- <div class="d-none d-lg-flex social-links fw-bold align-items-center">
         <i class="bi bi-envelope"></i> 
@@ -304,15 +304,17 @@
                 <div class="col-lg-4 col-xl-3 bg-light-1">
 
                     <div class="w-100 p-2 text-light">
-                        <p><span class="fs-6 fw-bold">Institute Name:</span> Barasat Government Medical College &
-                            Hospital</p>
-                        <hr>
-                        <p><span class="fs-6 fw-bold">Affiliated To:</span> West Bengal University Of Health Sciences
+                        <p><span class="fs-6 fw-bold">Institute Name:</span> <?=getHospitalSettings()->institute_name?>
                         </p>
-                        <p><span class="fs-6 fw-bold">Vice Chancellor: </span> Prof. (Dr.) Suhrita Paul</p>
-                        <p><span class="fs-6 fw-bold">Registrar: </span> Prof. (Dr.) Indrajit Gupta</p>
                         <hr>
-                        <p><span class="fs-6 fw-bold">Year of Registration:</span> 2021</p>
+                        <p><span class="fs-6 fw-bold">Affiliated To:</span> <?=getHospitalSettings()->affiliated_to?>
+                        </p>
+                        <p><span class="fs-6 fw-bold">Vice Chancellor: </span>
+                            <?=getHospitalSettings()->vice_chancellor?></p>
+                        <p><span class="fs-6 fw-bold">Registrar: </span> <?=getHospitalSettings()->registrar?></p>
+                        <hr>
+                        <p><span class="fs-6 fw-bold">Year of Registration:</span>
+                            <?=getHospitalSettings()->year_of_affiliation?></p>
                         <!--<hr>-->
                         <!--<p><span class="fs-6 fw-bold">Proposed Session:</span> 2022-23</p>-->
                     </div>
@@ -331,7 +333,8 @@
                     <div class="col-lg-3 mt-4 shadow bg-light">
                         <div class="icon-box rounded height-300" style="overflow: hidden;">
                             <div class="panel-header" style="margin-top: -25px;">
-                                <img src="./assets/img/attention.gif" alt="" style="width: 100%;height: 100px;" />
+                                <img src="https://barasatgmch.ac.in/assets/img/attention.gif" alt=""
+                                    style="width: 100%;height: 100px;" />
                             </div>
                             <div class="panel-body">
                                 <ul class="list-group text-justify" style="font-size: 14px">
@@ -352,20 +355,15 @@
                                 <div class="col-lg-12 d-flex align-items-stretch">
                                     <div class="icon-box mt-4">
                                         <h5 class="text-center">About the Hospital</h5>
+                                        <span id="history_and_heritage" class="d-none">
+                                            <?=getHospitalSettings()->history_and_heritage?>
+                                        </span>
                                         <hr>
-                                        <p class="">
-                                            The earlier stages of development of this district hospital may be traced to
-                                            its inception as Hatkhola Dispensary a long time back on 1854. Passing
-                                            through as the Barasat Cottage Hospital run by the local municipal authority
-                                            on 1908 it started running with15 indoor beds on 1930. Ultimately it was
-                                            taken over by the Government in 1945 and shifted to its present location in
-                                            1961. The present bed strength of this hospital is 600...
-                                        </p>
-                                        <!--<p>This hospital runs with 600 indoor beds including 12 CCU and 37 SNCU beds and expanding its’ patient care services in different fields... </p>-->
+                                        <?= word_limiter(getHospitalSettings()->history_and_heritage, 100);?>
                                         <div class="text-center">
                                             <a class="nav-link scrollto fw-bold text-info float-end mt-1"
-                                                data-bs-toggle="modal" data-bs-target="#hospital"
-                                                href="javascript:void(0)"><span>Read more...</span></a>
+                                                href="javascript:void(0)" onClick="aboutTheHospital()"><span>Read
+                                                    more...</span></a>
                                         </div>
                                     </div>
                                 </div>
@@ -376,9 +374,9 @@
                     <div class="col-lg-3 mt-4 shadow bg-light">
                         <div class="icon-box p-3 rounded height-300">
 
-                            <video poster="./assets/img/barasat-video-overlay.png" controls
+                            <video poster="https://barasatgmch.ac.in/assets/img/barasat-video-overlay.png" controls
                                 class="w-100 cursor-pointer">
-                                <source src="./assets/video/video.mp4" type="video/mp4">
+                                <source src="https://barasatgmch.ac.in/assets/video/video.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                             <hr>
@@ -419,13 +417,13 @@
                                         </div>
                                         <div class="col-lg-7">
                                             <div class="card-body text-justify">
-                                            <span class="d-none" id="modalData_<?=$key?>">
+                                                <span class="d-none" id="modalData_<?=$key?>">
                                                     <?=$row->description?>
                                                 </span>
                                                 <h5 id="modalLabel_<?=$key?>"><?=$row->title_1?></h5>
                                                 <hr>
                                                 <?= word_limiter($row->description, 60);?>
-                                                
+
                                                 <a class="nav-link scrollto fw-bold text-info float-end mt-1"
                                                     onClick='showHospitalHeadModal(<?=$key?>)'
                                                     href="javascript:void(0)"><span>Read more...</span></a>
@@ -568,34 +566,7 @@
                                 <div class="bg-white p-3 text-justify shadow-sm border">
                                     <h5 class="text-center">About the College</h5>
                                     <hr>
-                                    <p>
-                                        Barasat Government Medical College and Hospital is a newly developed medical
-                                        college under CSS II. This Medical College is situated on a 20.53 acres land in
-                                        the existing campus of Barasat District Hospital, Barasat, Mouza-Banamalipur (JL
-                                        No:- 80) & Uttarhat (JL No:-78) North 24 parganas, West Bengal. PIN-700124. As
-                                        at present North 24 Parganas is the most populous District in India so the
-                                        establishment of this Medical Institution will cater patients care service to a
-                                        large population.
-                                    </p>
-                                    <p class="">
-
-                                        Directorate of Medical Education, Government of West Bengal is the regulatory
-                                        authority.100 MBBS students. Students will be admitted annually through
-                                        NEET(NATIONAL ELIGIBILITY CUM ENTRANCE TEST) (UG) from 2022-23 session after
-                                        obtaining from letter of permission from National Medical Council.
-                                    </p>
-                                    <p>
-                                        DNB courses on different disciplines with a total of 16 seats allotted by NBE
-                                        are already running in this Institution.
-                                    </p>
-                                    <p>The foundation stone of this Medical College was laid by Honbl’e Chief Minister
-                                        of West Bengal Smt Mamata Banerjee on 22nd February, 2019.</p>
-                                    <p>
-                                        The Barasat Government Medical College and Hospital College is comprising of
-                                        teaching block, administrative block, a new OPD complex, Students’ hostel,
-                                        residents’ doctors’ quarters, Nurses’ quarters, Teaching staffs’ quarters and
-                                        Non-Teaching staffs’ quarters.
-                                    </p>
+                                    <?=getHospitalSettings()->description?>
                                 </div>
                                 <!-- <div class="text-center p-2 bg-base-background shadow">
                   <a href="hospital-inner-page.html" class="btn btn-sm bg-light-1 text-light rounded-0">Read More...</a>
@@ -631,49 +602,21 @@
                                 </div>
                             </div>
 
+                            <?php if(!empty($committees)){ ?>
                             <div class="col-lg-12  bg-light-1 mt-1 shadow-sm border">
                                 <div class="icon-box text-light p-2 rounded">
-                                    <!-- <div class="icon"><i class="fas fa-2x fa-pills"></i></div>
-                        <hr> -->
                                     <h4>Institute Committees</h4>
                                     <hr>
                                     <ul>
+                                        <?php foreach($committees as $row){ ?>
                                         <li> <a class="text-light" target="_blank"
-                                                href="./assets/documents/anti-committee.pdf">Anti Ragging
-                                                Committee,BGMCH</a> </li>
-                                        <!--<hr>-->
-                                        <li> <a class="text-light" target="_blank"
-                                                href="./assets/documents/gender.pdf">Gender Harrassment
-                                                Committee,BGMCH</a> </li>
-                                        <li> <a class="text-light" target="_blank"
-                                                href="./assets/documents/College_Council_committee.pdf">College Council
-                                                Committee,BGMCH</a> </li>
-                                        <li> <a class="text-light" target="_blank"
-                                                href="./assets/documents/curriculum_committee.pdf">Curriculum
-                                                Committee,BGMCH</a> </li>
-                                        <li> <a class="text-light" target="_blank"
-                                                href="./assets/documents/hostel_committee.jpg">Hostel
-                                                Committee,BGMCH</a> </li>
-                                        <!--<li> <a class="text-light" target="_blank"-->
-                                        <!--        href="./assets/documents/Faculty_list_of_MEU_rotated.pdf">Faculty list-->
-                                        <!--        of MEU,BGMCH</a> </li>-->
-                                        <li> <a class="text-light" target="_blank"
-                                                href="./assets/documents/Hospital_Infection_Control_Committee.pdf">Hospital
-                                                Infection Control Committee,BGMCH</a> </li>
-                                        <li> <a class="text-light" target="_blank"
-                                                href="./assets/documents/Medical Education Unit of Barasat Government Medical College.pdf">Medical
-                                                Education Committee reformed, BGMCH</a> </li>
-                                        <!--<li> <a class="text-light" target="_blank"-->
-                                        <!--        href="./assets/documents/Phasewise_Curriculum_Sub_Committee_ATI.pdf">Phasewise-->
-                                        <!--        Curriculum Sub Committee and ATI, BGMCH</a> </li>-->
-                                        <li> <a class="text-light" target="_blank"
-                                                href="./assets/documents/Technical_Advisory_Committee.pdf">Technical
-                                                Advisory Committee,BGMCH</a> </li>
-                                        <hr>
-                                        <!-- <hr> -->
+                                                href="<?=base_url('get-file/' . $row->file)?>"><?=$row->title?></a>
+                                        </li>
+                                        <?php } ?>
                                     </ul>
                                 </div>
                             </div>
+                            <?php } ?>
 
                             <!--<div class="col-lg-12  bg-light-1 mt-1 shadow-sm border">-->
                             <!--<div class="icon-box text-light p-2 rounded">-->
@@ -716,8 +659,8 @@
                                 <div class="row">
                                     <div class="icon-box p-3 rounded shadow-sm w-100 height-300 border bg-light-1">
                                         <div class="icon">
-                                            <!-- <a class="text-white float-end fs-6 fw-light fst-italic text-decoration-underline"
-                                                href="archive.php?q=tender">Archive</a> -->
+                                            <a class="text-white float-end fs-6 fw-light fst-italic text-decoration-underline"
+                                                href="<?=base_url('archive?type=TQ')?>">Archive</a>
                                         </div>
                                         <h4><a class="text-light" href="">Tender /Quotation</a></h4>
                                         <hr class="text-light">
@@ -740,8 +683,8 @@
                                 <div class="row mt-lg-4">
                                     <div class="icon-box p-3 rounded shadow-sm w-100 height-300 border bg-light-1">
                                         <div class="icon">
-                                            <!-- <a class="text-white float-end fs-6 fw-light fst-italic text-decoration-underline"
-                                                href="archive.php?q=g_notices">Archive</a> -->
+                                            <a class="text-white float-end fs-6 fw-light fst-italic text-decoration-underline"
+                                                href="<?=base_url('archive?type=GN')?>">Archive</a>
                                         </div>
                                         <h4><a class="text-light" href="">General Notices</a></h4>
                                         <hr class="text-light">
@@ -1023,19 +966,30 @@
                             <p>Barasat Government Medical College & Hospital, Barasat.<br> North 24 Parganas, Pin-700124
                             </p>
                             <i class="bi bi-phone"></i>
-                            <p>Phone: 033-25523228 <br> For admission related queries please contact: Dean of Students'
-                                affair ( 7003955245); Admission dealing staff (80016 11612)</p>
+                            <p>
+                                Phone: <?=getHospitalSettings()->phone_1?>
+                            </p>
+                            <p>
+                                For admission related queries please contact: Dean of Students'
+                                affair ( <?=getHospitalSettings()->phone_2?>);
+                            </p>
+                            <p>
+                                Admission dealing staff (<?=getHospitalSettings()->phone_3?>)
+                            </p>
                             <i class="bi bi-envelope"></i>
-                            <p>Mail: info@barasatgmch.ac.in / support@barasatgmch.ac.in</p>
+                            <p>Mail: <?=getHospitalSettings()->mail_1?></p>
+                            <p>
+                            <?=getHospitalSettings()->mail_2?>
+                            </p>
                         </div>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-lg-12">
-                        <!-- <small class="d-block text-end fst-italic">Probable google link below</small> -->
+                        <!-- <small class="d-block text-end fst-italic">< ?=getHospitalSettings()->map?></small> -->
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.140616546162!2d88.49010701496232!3d22.723014285105567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f8a33e5afdde31%3A0x4ec9f678ec80a363!2sBarasat%20government%20medical%20college%20%26%20hospital!5e0!3m2!1sen!2sin!4v1645535999509!5m2!1sen!2sin"
+                            src="<?=getHospitalSettings()->map?>"
                             height="450" style="border:0;width:100%" allowfullscreen="" loading="lazy"></iframe>
                     </div>
 
@@ -1145,8 +1099,8 @@
             </div>
 
             <!-- Modal -->
-            <div class="modal fade" id="showHospitalHeadModalModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal fade" id="showHospitalHeadModalModal" data-bs-backdrop="static" data-bs-keyboard="false"
+                tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -1216,28 +1170,8 @@
                             <h5 class="modal-title" id="exampleModalLabel">History of Barasat</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body">
-                            <p class="">
-                                The earlier stages of development of this district hospital may be traced to its
-                                inception as Hatkhola Dispensary a long time back on 1854. Passing through as the
-                                Barasat Cottage Hospital run by the local municipal authority on 1908 it started running
-                                with15 indoor beds on 1930. Ultimately it was taken over by the Government in 1945 and
-                                shifted to its present location in 1961. The present bed strength of this hospital is
-                                600.
-                            </p>
-                            <p>This hospital runs with 600 indoor beds including 12 CCU and 37 SNCU beds and expanding
-                                its’ patient care services in different fields as per the needs of the current era.
-                                Average no OPD patients attended per day is about 3000. In 2021 total OPD patients’
-                                turnover was 960088. </p>
-                            <p>Average number of delivery per day is 20 with total of 7427 deliveries in 2021. </p>
-                            <p>Different kinds of diagnostic laboratory tests are done for 24 hours with on an average
-                                2200 tests performed per day.</p>
-                            <p>5 bedded dialysis unit and a well-equipped blood bank with component separation
-                                facilities are available with this hospital. Total number of blood unit issued in 2021
-                                is 14076.</p>
-                            <p>This hospital participates in all Government programs whichever applicable with
-                                successful implementation and playing a significant role in combating and controlling
-                                the ongoing COVID-19 pandemic.</p>
+                        <div class="modal-body" id="showHospitalBody">
+
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -1313,12 +1247,19 @@
     })
 
 
-    function showHospitalHeadModal(key){ 
+    function showHospitalHeadModal(key) {
         var modalData = $('#modalData_' + key).html();
         var modalLabel = $('#modalLabel_' + key).html();
         $("#showHospitalHeadModalBody").html(modalData);
         $("#showHospitalHeadModalLabel").html(modalLabel);
         $('#showHospitalHeadModalModal').modal('show'); // Show modal
+
+    }
+
+    function aboutTheHospital() {
+        var modalData = $('#history_and_heritage').html();
+        $("#showHospitalBody").html(modalData);
+        $('#hospital').modal('show'); // Show modal
 
     }
     </script>

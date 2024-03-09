@@ -7,6 +7,7 @@ use CodeIgniter\Router\RouteCollection;
  */
 // $routes->get('/', 'Home::index');
 $routes->get('/', 'WebsiteController::home');
+$routes->get('archive', 'WebsiteController::archive');
 $routes->get('get-file/(:any)', 'FileController::getFile/$1');
 
 $routes->group('back-panel', static function ($routes) {

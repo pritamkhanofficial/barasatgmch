@@ -1,6 +1,8 @@
 <?php
 use CodeIgniter\HTTP\RequestInterface;
 use \Config\Database;
+use App\Models\WebsiteModel;
+
 
 function showFileToPath($filename)
 {
@@ -730,6 +732,12 @@ function dateDiff($date){
         $dDiff = $dStart->diff($dEnd);
         return  $dDiff->format('%r%a')  + 1;
     }
+function getHospitalSettings(){
+    return (new WebsiteModel())->getHospitalSettings();
+}
+
+
+
 
 
 ?>

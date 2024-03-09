@@ -60,17 +60,22 @@ class WebsiteModel extends Model
         return $this->db->table('sliders')->where(['is_active'=>1,'deleted_at'=>NULL])->get()->getResult();
 
     }
-    public function getDocument($type){
+    public function getDocument($type, $isArchive = false){
         $where = ['doc_type'=>$type,'is_active'=>1,'deleted_at'=>NULL];
 
         $builder = $this->db->table('documents');
-        if($type != 'IC'){
-            $builder->groupStart();
-                $builder->where(['end_date >=' => \getCurrentDate()]);
-                $builder->orWhere(['end_date'=> NULL]);
-            $builder->groupEnd();
+        if($isArchive){
+            if($type != 'IC'){
+                $builder->where(['end_date <=' => \getCurrentDate()]);
+            } 
+        }else{
+            if($type != 'IC'){
+                $builder->groupStart();
+                    $builder->where(['end_date >=' => \getCurrentDate()]);
+                    $builder->orWhere(['end_date'=> NULL]);
+                $builder->groupEnd();
+            }
         }
-
         $builder->where($where);
         return $builder->get()->getResult();
 
@@ -85,6 +90,10 @@ class WebsiteModel extends Model
     }
     public function getHospitalHead(){
         return $this->db->table('hospital_head')->where(['is_active'=>1,'deleted_at'=>NULL])->limit(2)->get()->getResult();
+
+    }
+    public function getHospitalSettings(){
+        return $this->db->table('about_hospital')->get()->getRow();
 
     }
 

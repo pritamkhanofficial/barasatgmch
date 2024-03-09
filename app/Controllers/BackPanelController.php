@@ -119,11 +119,11 @@ class BackPanelController extends BaseController
         $webModel = new WebsiteModel();
         $crud = new GroceryCrud();
         $crud->displayAs('history_and_heritage','History and Heritage');
-        $crud->displayAs('description','About');
+        $crud->displayAs('description','About the College');
         $crud->displayAs('is_active','Status');
         // $crud->where("deleted_at", NULL);
-        $crud->columns(['affiliated_to','vice_chancellor', 'registrar', 'year_of_affiliation']);
-        $crud->fields(['affiliated_to','vice_chancellor', 'registrar', 'year_of_affiliation','description', 'history_and_heritage', 'map', 'address', 'created_by','updated_by']);
+        $crud->columns(['institute_name','affiliated_to','vice_chancellor', 'registrar', 'year_of_affiliation']);
+        $crud->fields(['institute_name','affiliated_to','vice_chancellor', 'registrar', 'year_of_affiliation','description', 'history_and_heritage', 'map', 'address','phone_1','phone_2','phone_3','mail_1','mail_2', 'created_by','updated_by']);
         $crud->setTexteditor(['description', 'history_and_heritage','address']);
         // $crud->setFieldUpload(['file', 'is_active','created_by']);
         $crud->callbackColumn('file', array($this, 'showFile'));
