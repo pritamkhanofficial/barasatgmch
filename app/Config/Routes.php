@@ -70,6 +70,11 @@ $routes->group('back-panel', static function ($routes) {
         $routes->match(['get', 'post'],'designation/(:segment)', 'BackPanelController::designation/$1');
         $routes->match(['get', 'post'],'designation/(:segment)/(:segment)', 'BackPanelController::designation/$1/$2');
 
+
+        $routes->match(['get', 'post'],'page/', 'BackPanelController::page');
+        $routes->match(['get', 'post'],'page/(:segment)', 'BackPanelController::page/$1');
+        $routes->match(['get', 'post'],'page/(:segment)/(:segment)', 'BackPanelController::page/$1/$2');
+
        
     });
 });

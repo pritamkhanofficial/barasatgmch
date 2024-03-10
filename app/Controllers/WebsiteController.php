@@ -55,15 +55,15 @@ class WebsiteController extends BaseController
     public function innerPage()
     {
         $rules = [
-            'type' => ['rules' => 'required|numeric']
+            'id' => ['rules' => 'required|numeric']
 
         ];
         if(!$this->validate($rules)){
             return redirect()->back();
         }
-        $type = $this->request->getVar('type');
+        $id = $this->request->getVar('id');
         
-        $content = $this->websiteModel->getInnerPage($type);
+        $content = $this->websiteModel->getInnerPage($id);
         if(is_null($content)){
             return redirect('/');
         }

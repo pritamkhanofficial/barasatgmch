@@ -31,24 +31,23 @@
                             <li class="dropdown"><a href="index.php#faq"><span>Department wise Faculty & Publications
                                         Details</span> <i class="bi bi-chevron-right"></i></a>
                                 <ul>
-                                    <li><a href="assets/documents/Physiology_Faculty Details.pdf"
+                                    <li><a href="<?=base_url('inner-page?id=2')?>"
                                             target="_blank">Physiology</a></li>
-                                    <li><a href="assets/documents/FMT_Faculty Details.pdf" target="_blank">FMT</a></li>
-                                    <li><a href="assets/documents/Community Medicine_Faculty Details.pdf"
+                                    <li><a href="<?=base_url('inner-page?id=3')?>" target="_blank">FMT</a></li>
+                                    <li><a href="<?=base_url('inner-page?id=4')?>"
                                             target="_blank">Community Medicine</a></li>
-                                    <li><a href="assets/documents/Pathology_ Website.pdf" target="_blank">Pathology</a>
+                                    <li><a href="<?=base_url('inner-page?id=5')?>" target="_blank">Pathology</a>
                                     </li>
-                                    <li><a href="assets/documents/microbilogy_Details Required for College Website-final.pdf"
+                                    <li><a href="<?=base_url('inner-page?id=6')?>"
                                             target="_blank">Microbilogy</a></li>
-                                    <li><a href="assets/documents/General Medicine_Faculty Details.pdf"
+                                    <li><a href="<?=base_url('inner-page?id=7')?>"
                                             target="_blank">General Medicine</a></li>
-                                    <li><a href="assets/documents/Gayene&Obs_Faculty Details.pdf" target="_blank">Gayene
-                                            & Obs</a></li>
-                                    <li><a href="assets/documents/Bio_Details_Required_for_College_Website.pdf"
+                                    <li><a href="<?=base_url('inner-page?id=8')?>" target="_blank">Gayene & Obs</a></li>
+                                    <li><a href="<?=base_url('inner-page?id=9')?>"
                                             target="_blank">Biochemistry</a></li>
                                 </ul>
                             </li>
-                            <li class="dropdown"><a href="assets/documents/BGMCH_Annual_Discloser_Report_2023.pdf"
+                            <li class="dropdown"><a href="<?=base_url('inner-page?id=10')?>"
                                     target="_blank"><span>BGMCH Annual Discloser Report 2023</span> </a>
                         </ul>
                     </li>
@@ -68,52 +67,45 @@
                             <li class="dropdown"><a href="#"><span>List of Students'</span> <i
                                         class="bi bi-chevron-right"></i></a>
                                 <ul>
-                                    <li><a href="./assets/documents/MBBS Seats Information of BGMCH of Batch 2023-24_rotated.pdf"
+                                    <li><a href="<?=base_url('inner-page?id=11')?>"
                                             target="_blank">Session - 2023-28</a></li>
-                                    <li><a href="./assets/documents/students_list_Adm_2022.pdf" target="_blank">Session
-                                            - 2022-27</a></li>
+                                    <li><a href="<?=base_url('inner-page?id=12')?>" target="_blank">Session - 2022-27</a></li>
 
                                 </ul>
                             </li>
                             <li class="dropdown"><a href="#"><span>Forms</span> <i class="bi bi-chevron-right"></i></a>
                                 <ul>
-                                    <li><a href="./assets/documents/Admission_form_2023.pdf" target="_blank">Admission
-                                            Form 2023</a></li>
-                                    <li><a href="./assets/documents/AIQ_Checklist.pdf" target="_blank">AIQ Checklist</a>
+                                    <li><a href="<?=base_url('inner-page?id=13')?>" target="_blank">Admission Form 2023</a></li>
+                                    <li><a href="<?=base_url('inner-page?id=14')?>" target="_blank">AIQ Checklist</a>
                                     </li>
-                                    <li><a href="./assets/documents/Bond_Proforma.pdf" target="_blank">Bond Proforma</a>
+                                    <li><a href="<?=base_url('inner-page?id=15')?>" target="_blank">Bond Proforma</a>
                                     </li>
-                                    <li><a href="./assets/documents/Check_List_SQ.pdf" target="_blank">Check List SQ</a>
+                                    <li><a href="<?=base_url('inner-page?id=16')?>" target="_blank">Check List SQ</a>
                                     </li>
-                                    <li><a href="./assets/documents/Document_Receipt.pdf" target="_blank">Document
-                                            Receipt</a></li>
-                                    <li><a href="./assets/documents/Fee_Payment_2023.pdf" target="_blank">Fee
-                                            Payment</a></li>
-                                    <li><a href="./assets/documents/Medical_Certificate.pdf" target="_blank">Medical
-                                            Certificate</a></li>
-                                    <li><a href="./assets/documents/Undertaking.pdf" target="_blank">Undertaking</a>
+                                    <li><a href="<?=base_url('inner-page?id=17')?>" target="_blank">Document Receipt</a></li>
+                                    <li><a href="<?=base_url('inner-page?id=18')?>" target="_blank">Fee Payment</a></li>
+                                    <li><a href="<?=base_url('inner-page?id=19')?>" target="_blank">Medical Certificate</a></li>
+                                    <li><a href="<?=base_url('inner-page?id=20')?>" target="_blank">Undertaking</a>
                                     </li>
-                                    <li><a href="./assets/documents/Willingness.pdf" target="_blank">Willingness</a>
+                                    <li><a href="<?=base_url('inner-page?id=21')?>" target="_blank">Willingness</a>
                                     </li>
                                 </ul>
                             </li>
                             <li class="dropdown"><a href="#"><span>Student Notice</span> <i
                                         class="bi bi-chevron-right"></i></a>
                                 <ul>
-                                    <li><a href="./assets/documents/2nd phase class routine_rotated.pdf"
+                                    <li><a href="<?=base_url('inner-page?id=22')?>"
                                             target="_blank">2nd phase class routine</a></li>
-                                    <li><a href="./assets/documents/1st Phase MBBS Weekly Schedule_rotated.pdf"
+                                    <li><a href="<?=base_url('inner-page?id=23')?>"
                                             target="_blank">1st Phase MBBS Weekly Schedule</a></li>
-                                    <li><a href="./assets/documents/Foundation Course Details of MBBS 2023-24_rotated.pdf"
+                                    <li><a href="<?=base_url('inner-page?id=24')?>"
                                             target="_blank">Foundation Course Details of MBBS 2023-24</a></li>
-                                    <li><a href="./assets/documents/NOTICE_for_admission_of_SQ_students.pdf"
+                                    <li><a href="<?=base_url('inner-page?id=25')?>"
                                             target="_blank">NOTICE for admission of SQ students</a></li>
-                                    <li><a href="./assets/documents/Notice_for_AIQ_students.pdf" target="_blank">Notice
-                                            for AIQ students</a></li>
+                                    <li><a href="<?=base_url('inner-page?id=26')?>" target="_blank">Notice for AIQ students</a></li>
                                 </ul>
                             </li>
-                            <li><a class="nav-link scrollto" href="./assets/documents/Fees_structure.pdf">Fees
-                                    Structure</a></li>
+                            <li><a class="nav-link scrollto" href="<?=base_url('inner-page?id=27')?>">Fees Structure</a></li>
                         </ul>
                     </li>
                     <!--<li><a class="nav-link scrollto fw-bold" href="#faq">Departments</a></li>-->

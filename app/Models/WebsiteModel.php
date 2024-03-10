@@ -97,8 +97,8 @@ class WebsiteModel extends Model
 
     }
 
-    public function getInnerPage($type){
-        $where = ['page_type'=>$type];
+    public function getInnerPage($id){
+        $where = ['page_id'=>$id];
 
         $builder = $this->db->table('content');
         
@@ -129,6 +129,37 @@ class WebsiteModel extends Model
         $builder->join('designation ds','ds.id=staff.designation_id','left');
         $builder->where($where);
         return $builder->get()->getResult();
+
+    }
+
+    public function checkPage(){
+        $sql = "SELECT 
+                    *,
+                    (
+                        SELECT
+                            EXISTS(
+                                SELECT
+                                    page_id
+                                FROM
+                                    content
+                                WHERE
+                                    page_id = `page`.`id`
+                            )
+                    ) AS is_exists
+                FROM 
+                    `page`
+                WHERE
+                    is_active = 1
+                    AND deleted_at IS NULL
+                ";
+        $result = $this->db->query($sql)->getResult();
+                         
+        foreach($result as $row){
+            if(!$row->is_exists){
+                return true;
+            }
+        }
+        return false;
 
     }
 

@@ -22,6 +22,7 @@
                      <ul class="sub-menu" aria-expanded="false">
                          <li><a href="<?=base_url('back-panel/department')?>" key="t-dept">Department</a></li>
                          <li><a href="<?=base_url('back-panel/designation')?>" key="t-default">Designation</a></li>
+                         <li><a href="<?=base_url('back-panel/page')?>" key="t-default">Page</a></li>
                      </ul>
                  </li>
                  <li>
